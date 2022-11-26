@@ -1,0 +1,767 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: Arial,sans-serif;
+    scroll-behavior: smooth;
+}
+:root {
+    --main-color: rgb(19, 201, 201);
+    --backgroundColor: #eee;
+}
+@media (min-width: 768px) {
+    body {
+        height: fit-content;
+    }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+/* ------------------------------- start landing page ------------------------------- */
+body {
+    position: relative;
+}
+/*------------------------Start Setting------------------------*/
+.contSetting {
+    display: flex;
+    justify-content: flex-end;
+}
+.contSetting i {
+    background-color: rgb(228, 255, 253);
+    font-size: 25px;
+    color: var(--main-color);
+    height: fit-content;
+    padding: 1%;
+    transform: translateY(70px);
+    border-radius: 6px 0 0 6px;
+    position: fixed;
+    right: 0;
+    top: 10%;
+    z-index: 4;
+    cursor: pointer;
+}
+.navSetting {
+    width: 25%;
+    height: 100vh;
+    background-color: rgb(228, 255, 253);
+    padding: 2% 0;
+    border-radius: 10px 0 0 10px;
+    position: fixed;
+    right: 0;
+    top: 10%;
+    z-index: 4;
+    display: none;
+    font-size: 14px;
+}
+.boxSetting,.nightMood {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    height: fit-content;
+    padding: 2% 5%;
+    background-color: #eee;
+    border-radius: 6px;
+    margin: 0 auto 3% ;
+    text-align: center;
+}
+.nightMood {
+    display: block;
+}
+.nightMood .flex {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    display: flex;
+}
+.boxSetting h3 {
+    margin: 0 40% 8%; 
+    font-size: 20px;
+    font-weight: 700;
+}
+.btnSetting,.btnSettingR,.btnSettingRe {
+    width: 40%;
+    height: 10%;
+    background-color:  var(--main-color);
+    color: white;
+    border-radius: 10px;
+    padding: 5% 0;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 10% 0;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnSettingR,.btnSettingRe {
+    background-color: rgb(234, 115, 18);
+    margin: 5% auto;
+    width: 80%;
+}
+.btnSetting:hover {
+    background-color: rgb(6, 139, 139);
+}
+.btnSettingR:hover ,.btnSettingRe:hover {
+    background-color: rgb(209, 83, 0);
+}
+.content {
+    display: block;
+}
+.remove {
+    display: none;
+}
+.trans {
+    right: 25% !important;
+    top: 10%;
+}
+pre {
+    font-weight: 700;
+    font-size: 20px;
+}
+.circleSet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.a {
+    background-color: rgb(46, 160, 145);
+}
+.b {
+    background-color: rgb(13, 175, 13);
+}
+.c {
+    background-color: rgb(134, 69, 69);
+}
+.d {
+    background-color: rgb(60, 84, 173);
+}
+.e {
+    background-color: rgb(128, 25, 114);
+}
+.darkMood {
+    background-color: #222;
+}
+@media (max-width: 968px) {
+    .boxSetting {
+        padding: 3% 5% 5% 1%;
+        margin: 3% auto;
+    }
+    .btnSetting {
+        margin: 4% auto 0;
+    }
+    .btnSettingR,.btnSettingRe {
+        background-color: rgb(234, 115, 18);
+        margin: 5% auto 0;
+        width: 80%;
+        padding: 4% 5%;
+    }
+    .navSetting {
+        width: 50%;
+        padding: 2% 0 ;
+        font-size: 16px;
+    }
+    .trans {
+        right: 50% !important;
+    }
+    .inheritFS {
+        font-size: inherit !important;
+    }
+}
+@media (min-width: 968px) {
+    .inheritFS {
+        font-size: inherit !important;
+    }
+}
+/*------------------------End Setting------------------------*/
+.landing {
+    height: 100vh;
+    background-image: url(../imags/1.jpg);
+    background-size: cover;
+    position: relative;
+    transition: 0.6s ease-in-out;
+}
+.layer {
+    background-color: #00000066;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+.logo {
+    font-weight: 700;
+    color: white;
+    font-size: 30px;
+    margin: 0px 50px 0px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0;
+    height: 60px;
+    background-color: #0000006e;
+    align-items: center;
+    position: fixed;
+    z-index: 4;
+}
+.header ul {
+    display: flex;
+    list-style: none;
+    width: 50%;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+.header ul li a {
+    font-style: none;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+.header ul li a:hover, 
+.header ul li a.active {
+    color: var(--main-color);
+    font-size: 20px;
+}
+.headerRes {
+    display:none;
+}
+.headerRes .list {
+    display: flex;
+    width: 8%;
+    flex-wrap: wrap;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+    margin-right: 4%;
+}
+.headerRes .list .row {
+    width: 100%;
+    height: 6%;
+    background-color: white;
+    border-radius: 6px;
+}
+.headerRes ul {
+    display: none;
+}
+@media (max-width: 768px) {
+    .headerRes {
+        display:contents;
+    }
+    .header .info {
+        display: none;
+    }
+    .headerRes .ul {
+        display: block;
+        background-color: #00000073;
+        height: fit-content;
+        width: 100%;
+        font-size: 30px;
+        padding: 10% 40% 1%;
+        list-style: none;
+        text-align: center;
+        position: fixed;
+        top: 60px;
+    }
+    .headerRes .ul li a {
+        color: white;
+        margin: 20px 0;
+        text-decoration: none;
+        margin: 10% 0;
+        display: inline-block;
+    }
+    .headerRes .ul li a:hover {
+        color: var(--main-color);
+    }
+}
+.landing section {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+.landing section p {
+    color: white;
+    line-height: 2;
+}
+.landing section p span {
+    font-weight: 800;
+}
+.landing section p span span {
+    font-size: 20px;
+    color: var(--main-color);
+}
+.buttonLeft,.buttonRight {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+}
+.buttonLeft {
+    left: 0;
+}
+.buttonRight {
+    right: 0;
+}
+.arrowLeft,.arrowRight {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    border-top: white solid 2px;
+    border-left: white solid 2px;
+    border-right: transparent;
+    border-bottom: transparent;
+}
+.arrowRight {
+    right: 1.5%;
+    transform: rotateZ(135deg);
+}
+.arrowLeft {
+    left: 1.5%;
+    transform: rotateZ(-45deg);
+}
+.arrowLeft:hover,.arrowRight:hover {
+    border-top: var(--main-color) solid 2px;
+    border-left: var(--main-color) solid 2px;
+}
+/* ------------------------------- End landing page ------------------------------- */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    height: fit-content;
+}
+/* ------------------------------- Start skills page ------------------------------- */
+.skills {
+    height: fit-content;
+    width: 100%;
+    padding: 0.5% 0;
+    margin: 30px 0;
+}
+.head .container {
+    height: fit-content;
+    width: 80%;
+    padding: 0.5% 0;
+}
+.skills .head, .head .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.head .container img {
+    width: 300px;
+    height: 200px;
+    transform: translateY(-15%);
+}
+.head .container p:nth-of-type(1) {
+    font-size: 30px;
+    color: var(--main-color);
+    width: 60%;
+    margin: 25px 0;
+}
+.head .container p:nth-of-type(2) {
+    color: rgb(141, 141, 141);
+    line-height: 2;
+    width: 50%;
+    margin-right: 10%;
+    margin-bottom: 60px;
+}
+.ourSkills {
+    background-color: var(--backgroundColor);
+    margin: 40px 0;
+    padding: 2%;
+    display: block;
+} 
+.ourSkills ul li {
+    list-style: none;
+    width: 100%;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 600;
+    margin: 5% 0;
+    /* background-color: white; */
+    padding: 0 4%;
+    border-radius: 6px;
+    display: flex;
+}
+.ourSkills ul li p {
+    color: black !important;
+    width: 20% !important;
+    font-size: 1rem !important;
+}
+.ourSkills ul li div {
+    width: 100%;
+    background-color: rgba(224, 224, 224, 0.867);
+    height: 25px;
+    margin: auto;
+    border-radius: 6px;
+    position: relative; 
+}
+.ourSkills ul li div div {
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    transition: 1s ease-in-out;
+}
+.ourSkills ul li:nth-of-type(1) div div {
+    width: 0%;
+}
+.ourSkills ul li:nth-of-type(2) div div {
+    width: 0%; 
+}
+.ourSkills ul li:nth-of-type(3) div div {
+    width: 0%;
+}
+.ourSkills ul li:nth-of-type(4) div div {
+    width: 0%;
+}
+.ourSkills ul li:nth-of-type(5) div div {
+    width: 0%;
+}
+.ourSkills ul li:nth-of-type(6) div div {
+    width: 0%;
+} 
+.title {
+    font-size: 30px;
+    color: var(--main-color);
+    font-weight: 700;
+    width: 100% !important; 
+    text-align: center;
+    padding: 0 0 2%;
+}
+@media (max-width: 768px) {
+    .head .container p:nth-of-type(1) {
+        width: 100%;
+        text-align: center;
+    }    
+    .head .container p:nth-of-type(2) {
+        width: 100%;
+        text-align: center;
+    }
+    .ourSkills ul li p {
+        width: 23% !important;
+        font-size: 0.8rem !important;
+        font-weight: 500;
+        margin: 0 10px;
+    }
+    .ourSkills ul li {
+        margin: 50px 0;
+    }
+}
+/* ------------------------------- End skills page ------------------------------- */
+/* ------------------------------- Start Gallery page ------------------------------- */
+.Gallery {
+    height: fit-content;
+    width: 100%;
+    background-color: var(--backgroundColor);
+    padding: 6% 0;
+    display: block;
+}
+.imgGallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 3%;
+    justify-content: center;
+}
+.imgGallery div {
+    margin: 10px 20px;
+    width: 20%;
+    height: 150px;
+    border: 2px gray solid;
+    overflow: hidden;
+}
+.imgGallery div img {
+    width: 100%;
+    height: 100%;
+}
+.imgGallery div img:hover {
+    transition: .3s ease-in-out;
+    transform: scale(1.2,1.2) rotateZ(-4deg);
+    opacity: .6;
+
+}
+@media (max-width: 768px) {
+    .Gallery {
+        margin: 0;
+    }
+    .imgGallery img {
+        width: 40%;
+    }
+}
+@media (min-width: 568px) and (max-width: 900px) {
+    .imgGallery div {
+        width: 30%;
+    }
+}
+@media (max-width: 567px) {
+    .imgGallery div {
+        width: 60%;
+    }
+}
+/* ------------------------------- End Gallery page ------------------------------- */
+/* ------------------------------- Start Timeline page ------------------------------- */
+.Timeline {
+    height: fit-content;
+    background-color: var(--backgroundColor);
+    width: 100%;
+    position: relative;
+    padding: 3% 0;
+    margin: 40px 0;
+}
+.halfLine {
+    height: 100%;
+    background-color: var(--main-color);
+    width: 2.5px;
+    margin: auto;
+    padding: .1px 0;
+}
+.circle,.circleTow {
+    background-color: var(--backgroundColor);
+    border: 3px solid var(--main-color);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    transform: translateX(-50%);
+    margin: 130px 0;
+    position: relative;
+}
+.circle::after {
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-left: solid 30px white;
+    border-right: transparent;
+    border-top: transparent;
+    border-bottom: solid 30px white;
+    transform: rotateZ(45deg);
+    left: -40px;
+    top: -10px;    
+}
+.circleTow::after {
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-left: solid 30px white;
+    border-right: transparent;
+    border-top: transparent;
+    border-bottom: solid 30px white;
+    transform: rotateZ(45deg);
+    right: -40px;
+    top: -10px; 
+}
+.postOne, .postTow,.postThree {
+    width: 40%;
+    height: fit-content;
+    padding: 2% 1%;
+    background-color: white;
+    color: rgb(141, 141, 141);
+    text-align: left;
+}
+.postOne {
+    position: absolute;
+    top: 20%;
+    left: 8%;
+}
+.postTow {
+    position: absolute;
+    right: 8%;
+    top: 44%;
+}
+.postThree {
+    position: absolute;
+    left: 8%;
+    top: 67%;
+}
+@media (max-width: 768px) {
+    .postOne {
+        left: 6%;
+        top: 16%;
+    }
+    .postTow {
+        top: 35%;
+        right: 6%;
+    }
+    .postThree {
+        top: 51%;
+        left: 6%;
+    }
+    .Timeline {
+        height: 900px;
+    }
+    .halfLine {
+        height:90%;
+    }
+}
+/* ------------------------------- End Timeline page ------------------------------- */
+/* ------------------------------- Start Features page ------------------------------- */
+.Features {
+    height: fit-content;
+    background-color: var(--backgroundColor);
+    padding: 4% 0 0 4%;
+    margin: 40px 0;
+}
+.conFeture {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.feat {
+    width: 28%;
+    margin: 40px 0;
+}
+.titleFeat {
+    color: rgb(0, 0, 39);
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px 0;
+}
+.tailFeat {
+    color: rgb(141, 141, 141);
+    line-height: 2;
+    font-weight: 500;
+}
+.line {
+    width: 20%;
+    background-color: var(--main-color);
+    height: 3px;
+    margin: 15px auto;
+}
+.feat i {
+    color: var(--main-color);
+    font-size: 40px;
+}
+@media (max-width: 768px) {
+    .feat {
+        width: 65%;
+    }
+}
+/* ------------------------------- End Features page ------------------------------- */
+/* ------------------------------- Start Testimonials page ------------------------------- */
+.Testimonials {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--main-color) ;
+    padding: 6% 5%;
+    justify-content: space-around;
+    text-align: center;
+}
+.testHead {
+    width: 100%;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 40px 0;
+}
+.box {
+    width: 30%;
+    background-color: white;
+    height: fit-content;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+}
+.contentBox {
+    color: rgb(141, 141, 141);
+    line-height: 1.9;
+    margin: 4px 0;
+}
+.circleBox {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url(../imags/atia.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .box {
+        width: 70%;
+        margin: 20px;
+    }
+}
+/* ------------------------------- End Testimonials page ------------------------------- */
+/* ------------------------------- Start Contant Us page ------------------------------- */
+.ContantUs {
+    height: fit-content;
+    background-color: var(--backgroundColor);
+    padding: 4% 15%;
+    margin: 40px 0;
+}
+.container2 {
+    display: flex;
+    margin: 3%;
+}
+.container2 form input {
+    width: 65%;
+    height: 18%;
+    margin: 2.1%;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 2%;
+}
+textarea {
+    padding: 5px;
+}
+.button {
+    width: 100%;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    height: 18%;
+    border-radius: 6px;
+    text-align: center;
+    padding: 4%;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .container2 {
+        display: contents;
+    }
+    .container2 form input {
+        width: 100%;
+        margin: 17px;
+    }
+    textarea {
+        width: 100%;
+        transform: translateX(5%);    
+    }
+    .button {
+        transform: translateX(5%);    
+    }
+}
+/* ------------------------------- End Contant Us page ------------------------------- */
+/* ------------------------------- Start Footer page ------------------------------- */
+footer {
+    height: 100px;
+    background-color: var(--main-color);
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 3%;
+    letter-spacing:2px;
+}
+@media (max-width: 768px) {
+    footer {
+        padding: 7% 0; 
+    }
+}
+/* ------------------------------- End Footer page ------------------------------- */
